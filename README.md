@@ -21,7 +21,7 @@ public func application(s : NSDictionary) -> NSArray {
 }
 ```
 
-as you can see, Objective-C native types are expected at the lower level, consider making some kind of wrapping to Swift native types
+as you can see, Objective-C native types are expected at the lower level, consider making some kind of wrapping to Swift native types (read: re-encode application() arguments to [String : String] and pass it to another swift function)
 
 
 The plugin is 2.x friendly:
@@ -37,13 +37,13 @@ uwsgi --build-plugin uwsgi-swift
 ```
 
 
-The plugin has hardcoded mangled entry point:
+The plugin has hardcoded mangled entry point (so do not changefunction signature or the plugin will crash):
 
 ```c
 char *symbol_name = "_TF7example11applicationFCSo12NSDictionaryCSo7NSArray";
 ```
 
-it maps to example.application function. Feel free to change it and rebuild the plugin
+it maps to example.application function. Feel free to change it and rebuild the plugin (use the nm command line tool to get the symbol name)
 
 To build example.swift as a shared library
 
