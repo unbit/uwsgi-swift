@@ -37,7 +37,7 @@ uwsgi --build-plugin uwsgi-swift
 ```
 
 
-The plugin has hardcoded mangled entry point (so do not changefunction signature or the plugin will crash):
+The plugin has hardcoded mangled entry point (so do not change function signature or the plugin will crash):
 
 ```c
 char *symbol_name = "_TF7example11applicationFCSo12NSDictionaryCSo7NSArray";
